@@ -23,7 +23,7 @@ class _HomeSplashScreenState extends State<HomeSplashScreen> {
           onPageChanged: (value) {
             index = value;
             if (index == 2) {
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) =>

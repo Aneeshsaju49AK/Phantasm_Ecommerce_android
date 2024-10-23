@@ -14,3 +14,7 @@ export 'package:phantasm/screens/Widgets/CustomContainer_With_Decoration/customc
 export 'package:phantasm/screens/Widgets/CustomDotsInSplash_Widget/custom_dots_in_splashscreen.dart';
 export 'package:phantasm/screens/Widgets/CustomSizedBox_widget/custom_sizedbox.dart';
 export 'package:smooth_page_indicator/smooth_page_indicator.dart';
+export 'package:phantasm/controllers/Navigation_Controller/navigation_controller.dart';
+export 'package:phantasm/screens/Widgets/CustomPadding/custom_padding.dart';
+export 'package:phantasm/screens/Widgets/CustomTextField/customtexfield_widget.dart';
+export 'package:phantasm/screens/Widgets/CustomTextField/customtexfield_with_surfixicon.dart';
