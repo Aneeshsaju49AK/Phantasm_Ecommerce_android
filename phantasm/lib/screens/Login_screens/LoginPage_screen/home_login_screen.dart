@@ -1,6 +1,5 @@
-
-
 import 'package:phantasm/core/Export/export.dart';
+import 'package:phantasm/screens/Dashboard_screens/DashboardPage_screen/home_dashboard_screen.dart';
 
 class HomeLoginScreen extends StatelessWidget {
   const HomeLoginScreen({super.key});
@@ -122,11 +121,16 @@ class HomeLoginScreen extends StatelessWidget {
               const CustomSizedBox(
                 height: 30,
               ),
-              CustomContainerWithBoxDecoration(
-                  needWidth: 1.1,
-                  needheight: 14,
-                  customSize: customSize,
-                  content: "Sign In"),
+              InkWell(
+                onTap: () {
+                  navigationToScreen(context, HomeDashboardScreen(),);
+                },
+                child: CustomContainerWithBoxDecoration(
+                    needWidth: 1.1,
+                    needheight: 14,
+                    customSize: customSize,
+                    content: "Sign In"),
+              ),
               const CustomSizedBox(
                 height: 30,
               ),
@@ -169,9 +173,3 @@ class HomeLoginScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
