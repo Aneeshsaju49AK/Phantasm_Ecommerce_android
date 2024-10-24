@@ -6,3 +6,4 @@ Color dotColor = const Color(0xFF161F28);
 Color textColor = const Color(0xFFFFFFFF);
 Color textColorGrey = const Color(0xFF707B81);
 Color buttomColor = const Color(0xFF161F28);
+

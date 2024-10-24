@@ -55,15 +55,26 @@ class HeaderSectionHomePageScreenWidget extends StatelessWidget {
               )
             ],
           ),
-          CustomCircleAvatoar(
-            radius: 23,
-            color: buttomColor,
-            child: Icon(
-              Icons.shopping_bag,
-              color: textColor,
-            ),
-          ),
+        const  CommonBagButton(),
         ],
+      ),
+    );
+  }
+}
+
+class CommonBagButton extends StatelessWidget {
+  const CommonBagButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomCircleAvatoar(
+      radius: 23,
+      color: buttomColor,
+      child: Icon(
+        Icons.shopping_bag,
+        color: textColor,
       ),
     );
   }

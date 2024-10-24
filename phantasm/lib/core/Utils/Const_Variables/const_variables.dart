@@ -45,3 +45,11 @@ final List<String> items = [
   "Sample 3",
   "Sample 4",
 ];
+final List<String> shoesSize = [
+  "38",
+  "39",
+  "40",
+  "41",
+  "42",
+  "43",
+];
