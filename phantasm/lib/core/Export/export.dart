@@ -18,3 +18,8 @@ export 'package:phantasm/controllers/Navigation_Controller/navigation_controller
 export 'package:phantasm/screens/Widgets/CustomPadding/custom_padding.dart';
 export 'package:phantasm/screens/Widgets/CustomTextField/customtexfield_widget.dart';
 export 'package:phantasm/screens/Widgets/CustomTextField/customtexfield_with_surfixicon.dart';
+export 'package:phantasm/screens/Dashboard_screens/HomePage_screen/widgets/bestchoice_section_widget.dart';
+export 'package:phantasm/screens/Dashboard_screens/HomePage_screen/widgets/header_section_widget.dart';
+export 'package:phantasm/screens/Dashboard_screens/HomePage_screen/widgets/listviewbuilder_popular_section.dart';
+export 'package:phantasm/screens/Dashboard_screens/HomePage_screen/widgets/search_section_widget.dart';
+export 'package:phantasm/screens/Dashboard_screens/HomePage_screen/widgets/sub_section_header_widget.dart';

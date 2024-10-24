@@ -6,6 +6,7 @@ class CustomContainerWithBoxDecoration extends StatelessWidget {
     required this.needheight,
     required this.customSize,
     required this.content,
+    this.style,
     this.color,
     super.key,
   });
@@ -14,6 +15,7 @@ class CustomContainerWithBoxDecoration extends StatelessWidget {
   final Size customSize;
   final String content;
   final Color? color;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class CustomContainerWithBoxDecoration extends StatelessWidget {
       child: Center(
         child: CustomText(
           content: content,
-          style: GoogleFonts.poppins(
+          style: style ?? GoogleFonts.poppins(
             fontSize: 17,
             fontWeight: FontWeight.w500,
             color: textColor,
