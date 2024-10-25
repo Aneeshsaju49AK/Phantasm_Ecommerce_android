@@ -1,5 +1,6 @@
 import 'package:phantasm/core/Export/export.dart';
 
+
 List<List<String>> splashscreenData = [
   [
     "Start Journey\nWith Shoes",
@@ -52,4 +53,18 @@ final List<String> shoesSize = [
   "41",
   "42",
   "43",
+];
+List<Widget>navigationScreenDashboard = const[
+  HomepageScreen(),
+  HomepageScreen(),
+  HomeCartScreen(),
+  HomepageScreen(),
+  HomeItemdiscriptionScreen(),
+  HomepageScreen(),
+];
+List<Widget>navigationScreenDashboardbottom = const[
+  HomeDashboardScreen(),
+  HomeCartScreen(),
+  HomeItemdiscriptionScreen(),
+  HomepageScreen(),
 ];

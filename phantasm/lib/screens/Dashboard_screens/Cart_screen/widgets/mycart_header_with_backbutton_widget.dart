@@ -19,7 +19,11 @@ class MyCartHeaderWithBackButtonWidget extends StatelessWidget {
           const CustomSizedBox(
             width: 20,
           ),
-        const  BackButtonCommon(),
+        InkWell(
+          onTap: () {
+            navigationToPop(context);
+          },
+          child: const  BackButtonCommon()),
           const CustomSizedBox(
             width: 80,
           ),

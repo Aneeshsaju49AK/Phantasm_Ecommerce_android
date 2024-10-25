@@ -1,6 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:phantasm/core/Export/export.dart';
 
+
 class HomepageScreen extends StatefulWidget {
   const HomepageScreen({super.key});
 
@@ -36,8 +37,10 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     return GestureDetector(
                       onTap: () {
                         setState(() {
-                          _selectedIndex = index; // Update selected index
+                          _selectedIndex = index;
+                           // Update selected index
                         });
+                        
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -113,7 +116,9 @@ class _HomepageScreenState extends State<HomepageScreen> {
           child: const Icon(
             Icons.shopping_cart,
           ),
-          onPressed: () {}),
+          onPressed: () {
+            navigationToScreen(context,const HomeCartScreen(),);
+          },),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(
         height: 70, // navigation bar
@@ -122,7 +127,13 @@ class _HomepageScreenState extends State<HomepageScreen> {
         gapLocation: GapLocation.center,
         notchMargin: 10, // Default notch margin is 8
         notchSmoothness: NotchSmoothness.softEdge,
-        onTap: (index) => setState(() => _bottomNavIndex = index),
+        onTap: (index) {
+          setState(() {
+             _bottomNavIndex = index;
+            navigationToScreen(context, navigationScreenDashboardbottom[index],);
+          });
+          
+        },
         backgroundColor: buttomColor,
       ),
     );

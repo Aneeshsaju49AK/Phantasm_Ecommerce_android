@@ -1,11 +1,11 @@
+
 import 'package:phantasm/core/Export/export.dart';
 
 class HomeDashboardScreen extends StatelessWidget {
   const HomeDashboardScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {  
-   
+  Widget build(BuildContext context) {
     final Size customSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: primaryColor,
@@ -91,42 +91,16 @@ class HomeDashboardScreen extends StatelessWidget {
                           return SidebarMenuItem(
                             icon: drawerOptionIcons[index],
                             label: drawerOption[index],
-                            onTap: () {},
+                            onTap: () {
+                              navigationToScreen(
+                                context,
+                                navigationScreenDashboard[index],
+                              );
+                            },
                           );
                         },
                       ),
                     ),
-                    // Menu Items
-                    // SidebarMenuItem(
-                    //   icon: Icons.person,
-                    //   label: 'Profile',
-                    //   onTap: () {},
-                    // ),
-                    // SidebarMenuItem(
-                    //   icon: Icons.home,
-                    //   label: 'Home Page',
-                    //   onTap: () {},
-                    // ),
-                    // SidebarMenuItem(
-                    //   icon: Icons.shopping_cart,
-                    //   label: 'My Cart',
-                    //   onTap: () {},
-                    // ),
-                    // SidebarMenuItem(
-                    //   icon: Icons.favorite,
-                    //   label: 'Favorite',
-                    //   onTap: () {},
-                    // ),
-                    // SidebarMenuItem(
-                    //   icon: Icons.local_shipping,
-                    //   label: 'Orders',
-                    //   onTap: () {},
-                    // ),
-                    // SidebarMenuItem(
-                    //   icon: Icons.notifications,
-                    //   label: 'Notifications',
-                    //   onTap: () {},
-                    // ),
                     const Spacer(),
                     CustomPadding(
                       left: 17,
@@ -139,8 +113,11 @@ class HomeDashboardScreen extends StatelessWidget {
                     SidebarMenuItem(
                       icon: Icons.exit_to_app,
                       label: 'Sign Out',
-                      onTap: () {},
+                      onTap: () {
+                        showSignOutDialog(context);
+                      },
                     ),
+
                     const CustomSizedBox(
                       height: 20,
                     ),
@@ -155,109 +132,3 @@ class HomeDashboardScreen extends StatelessWidget {
   }
 }
 
-class SidebarMenuItem extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final VoidCallback onTap;
-
-  const SidebarMenuItem({
-    super.key,
-    required this.icon,
-    required this.label,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(icon, color: textColorGrey),
-      title: CustomText(
-        content: label,
-        style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w400, fontSize: 16, color: textColor),
-      ),
-      onTap: onTap,
-    );
-  }
-}
-
-class ProfileSectionWidget extends StatelessWidget {
-  const ProfileSectionWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const CustomPadding(
-      left: 23,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomCircleAvatoar(
-            radius: 30,
-            // backgroundImage: AssetImage('assets/profile.jpg'), // Replace with your image asset
-          ),
-          CustomSizedBox(
-            width: 10,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomSizedBox(
-                width: 10,
-              ),
-              Text(
-                'Hey, 👋',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white70,
-                ),
-              ),
-              CustomSizedBox(
-                height: 5,
-              ),
-              Text(
-                'Alisson Becker',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// Custom Clipper for the slanted shape
-class SlantedClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-
-    // Start at the top-left corner
-    path.moveTo(0, 0);
-
-    // Draw a line to the top-right corner (full width at the top)
-    path.lineTo(size.width, 0);
-
-    // Draw a diagonal line from the top-right to 200px from the left at the bottom
-    path.lineTo(10, size.height);
-
-    // Draw a line to the bottom-left corner
-    path.lineTo(0, size.height);
-
-    // Close the path (draws back to the starting point)
-    path.close();
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
-  }
-}
